@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #030b17;
+  --color-surface: #192133;
+  --color-surface-hover: #263148;
+  --color-primary: #1f80e0;
+  --color-primary-hover: #1562b0;
+  --color-secondary: #03c66b;
+  --color-text-main: #ffffff;
+  --color-text-muted: #8f98a3;
+  --color-border: #2c364c;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+.hotstar-panel {
+  background-color: var(--color-surface);
+  border-radius: 8px;
+}
+
+.hotstar-border {
+  border: 1px solid var(--color-border);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3e4a61;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #546482;
+}
+
+/* Subtle pulse for LIVE indicators */
+@keyframes soft-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-soft-pulse {
+  animation: soft-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
